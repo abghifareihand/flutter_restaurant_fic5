@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_restaurant_fic5/presentation/pages/detail_restaurant_page.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../data/local_datasources/local_datasource.dart';
@@ -68,6 +69,19 @@ final router = GoRouter(
           return LoginPage.routeName;
         }
       },
+    ),
+    GoRoute(
+      path: '${DetailRestaurantPage.routeName}/:restaurantId',
+      builder: (context, state) => DetailRestaurantPage(
+        id: int.parse(state.pathParameters['restaurantId']!),
+      ),
+      // pageBuilder: (context, state) => buildPageWithDefaultTransition(
+      //   context: context,
+      //   state: state,
+      //   child: DetailRestaurantPage(
+      //     id: int.parse(state.pathParameters['restaurantId']!),
+      //   ),
+      // ),
     ),
   ],
 );
