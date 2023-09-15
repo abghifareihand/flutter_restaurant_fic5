@@ -19,7 +19,7 @@ class AuthDataSource {
       body: jsonEncode(registerData.toJson()),
     );
 
-    if (response.statusCode == 201) {
+    if (response.statusCode == 200) {
       return Right(
         AuthResponseModel.fromJson(jsonDecode(response.body)),
       );
@@ -38,12 +38,12 @@ class AuthDataSource {
       body: jsonEncode(model.toJson()),
     );
 
-    if (response.statusCode == 201) {
+    if (response.statusCode == 200) {
       return Right(
         AuthResponseModel.fromJson(jsonDecode(response.body)),
       );
     } else {
-      return const Left('API ERROR');
+      return const Left('Invalid email or password');
     }
   }
 }

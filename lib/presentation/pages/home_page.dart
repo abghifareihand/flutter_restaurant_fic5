@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_restaurant_fic5/bloc/get_all_product/get_all_product_bloc.dart';
-import 'package:flutter_restaurant_fic5/presentation/pages/restaurant_page.dart';
 import 'package:flutter_restaurant_fic5/presentation/widgets/restaurant_card.dart';
 import 'package:go_router/go_router.dart';
 
 class HomePage extends StatefulWidget {
-  static const routeName = '/home';
+  //static const routeName = '/home';
   const HomePage({super.key});
 
   @override
@@ -57,7 +56,7 @@ class _HomePageState extends State<HomePage> {
         currentIndex: 0,
         onTap: (value) {
           if (value == 1) {
-            context.push(RestaurantPage.routeName);
+            context.push('/restaurant');
           }
         },
         items: const [

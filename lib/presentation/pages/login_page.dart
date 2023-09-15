@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_restaurant_fic5/presentation/pages/register_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_restaurant_fic5/bloc/login/login_bloc.dart';
+import 'package:flutter_restaurant_fic5/data/local_datasources/local_datasource.dart';
+import 'package:flutter_restaurant_fic5/data/models/request/login_request_model.dart';
 import 'package:go_router/go_router.dart';
 import '../widgets/custom_button.dart';
 
 class LoginPage extends StatefulWidget {
-  static const routeName = '/login';
+  //static const routeName = '/login';
   const LoginPage({super.key});
 
   @override
@@ -46,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Login User',
+                    'Login Restaurant',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -109,10 +112,56 @@ class _LoginPageState extends State<LoginPage> {
                   ),
 
                   /// Button Login
-                  CustomButton(
-                    onPressed: () {},
-                    buttonText: 'Login',
-                    buttonWidth: double.infinity,
+                  BlocConsumer<LoginBloc, LoginState>(
+                    listener: (context, state) {
+                      state.maybeWhen(
+                        orElse: () {},
+                        error: (message) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(message),
+                              backgroundColor: Colors.redAccent,
+                            ),
+                          );
+                        },
+                        loaded: (model) async {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content:
+                                  Text('Login success ${model.user.username}'),
+                              backgroundColor: Colors.blueAccent,
+                            ),
+                          );
+                          await LocalDataSource().saveAuthData(model);
+                          if (!mounted) return;
+                          context.go('/restaurant');
+                        },
+                      );
+                    },
+                    builder: (context, state) {
+                      return state.maybeWhen(
+                        orElse: () {
+                          return CustomButton(
+                            onPressed: () {
+                              final requestModel = LoginRequestModel(
+                                identifier: _emailController!.text,
+                                password: _passwordController!.text,
+                              );
+                              context
+                                  .read<LoginBloc>()
+                                  .add(LoginEvent.add(requestModel));
+                            },
+                            buttonText: 'Login',
+                            buttonWidth: double.infinity,
+                          );
+                        },
+                        loading: () {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        },
+                      );
+                    },
                   ),
 
                   /// Don't Account
@@ -123,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                         "Don't have an account?",
                       ),
                       TextButton(
-                        onPressed: () => context.push(RegisterPage.routeName),
+                        onPressed: () => context.push('/register'),
                         child: const Text(
                           'Register',
                           style: TextStyle(

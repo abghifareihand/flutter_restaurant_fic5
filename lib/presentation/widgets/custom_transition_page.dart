@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_restaurant_fic5/presentation/pages/add_restaurant_page.dart';
 import 'package:flutter_restaurant_fic5/presentation/pages/detail_restaurant_page.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,16 +19,23 @@ CustomTransitionPage buildPageWithDefaultTransition<T>({
     child: child,
     transitionDuration: const Duration(milliseconds: 250),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      return FadeTransition(opacity: animation, child: child);
+      return SlideTransition(
+        position: Tween(
+          begin: const Offset(1.0, 0.0),
+          end: const Offset(0.0, 0.0),
+        ).animate(animation),
+        child: child,
+      );
     },
   );
 }
 
 final router = GoRouter(
-  initialLocation: HomePage.routeName,
+  initialLocation: '/home',
+  debugLogDiagnostics: true,
   routes: [
     GoRoute(
-      path: LoginPage.routeName,
+      path: '/login',
       builder: (context, state) => const LoginPage(),
       pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context,
@@ -36,7 +44,7 @@ final router = GoRouter(
       ),
     ),
     GoRoute(
-      path: RegisterPage.routeName,
+      path: '/register',
       builder: (context, state) => const RegisterPage(),
       pageBuilder: (context, state) => buildPageWithDefaultTransition(
         context: context,
@@ -45,43 +53,52 @@ final router = GoRouter(
       ),
     ),
     GoRoute(
-      path: HomePage.routeName,
+      path: '/home',
       builder: (context, state) => const HomePage(),
-      pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context,
-        state: state,
-        child: const HomePage(),
-      ),
+      // pageBuilder: (context, state) => buildPageWithDefaultTransition(
+      //   context: context,
+      //   state: state,
+      //   child: const HomePage(),
+      // ),
     ),
     GoRoute(
-      path: RestaurantPage.routeName,
+      path: '/restaurant',
       builder: (context, state) => const RestaurantPage(),
-      pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context,
-        state: state,
-        child: const RestaurantPage(),
-      ),
+      // pageBuilder: (context, state) => buildPageWithDefaultTransition(
+      //   context: context,
+      //   state: state,
+      //   child: const RestaurantPage(),
+      // ),
       redirect: (context, state) async {
         final isLogin = await LocalDataSource().isLogin();
         if (isLogin) {
           return null;
         } else {
-          return LoginPage.routeName;
+          return '/login';
         }
       },
     ),
     GoRoute(
-      path: '${DetailRestaurantPage.routeName}/:restaurantId',
+      path: '/detail-restaurant/:restaurantId',
       builder: (context, state) => DetailRestaurantPage(
         id: int.parse(state.pathParameters['restaurantId']!),
       ),
-      // pageBuilder: (context, state) => buildPageWithDefaultTransition(
-      //   context: context,
-      //   state: state,
-      //   child: DetailRestaurantPage(
-      //     id: int.parse(state.pathParameters['restaurantId']!),
-      //   ),
-      // ),
+      pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context,
+        state: state,
+        child: DetailRestaurantPage(
+          id: int.parse(state.pathParameters['restaurantId']!),
+        ),
+      ),
+    ),
+    GoRoute(
+      path: '/add-restaurant',
+      builder: (context, state) => const AddRestaurantPage(),
+      pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context,
+        state: state,
+        child: const AddRestaurantPage(),
+      ),
     ),
   ],
 );
