@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_restaurant_fic5/bloc/get_all_product/get_all_product_bloc.dart';
+import 'package:flutter_restaurant_fic5/bloc/get_all_restaurant/get_all_restaurant_bloc.dart';
 import 'package:flutter_restaurant_fic5/presentation/widgets/restaurant_card.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    context.read<GetAllProductBloc>().add(const GetAllProductEvent.get());
+    context.read<GetAllRestaurantBloc>().add(const GetAllRestaurantEvent.get());
     super.initState();
   }
 
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
             horizontal: 16,
             vertical: 12,
           ),
-          child: BlocBuilder<GetAllProductBloc, GetAllProductState>(
+          child: BlocBuilder<GetAllRestaurantBloc, GetAllRestaurantState>(
             builder: (context, state) {
               return state.when(
                 initial: () => const Center(child: CircularProgressIndicator()),

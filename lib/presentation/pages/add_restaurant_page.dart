@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_restaurant_fic5/bloc/add_product/add_product_bloc.dart';
-import 'package:flutter_restaurant_fic5/bloc/get_all_product/get_all_product_bloc.dart';
+import 'package:flutter_restaurant_fic5/bloc/add_restaurant/add_restaurant_bloc.dart';
+import 'package:flutter_restaurant_fic5/bloc/get_all_restaurant/get_all_restaurant_bloc.dart';
 import 'package:flutter_restaurant_fic5/data/local_datasources/local_datasource.dart';
 import 'package:flutter_restaurant_fic5/data/models/request/add_product_request_model.dart';
 import 'package:flutter_restaurant_fic5/presentation/widgets/custom_button.dart';
@@ -132,7 +132,7 @@ class _AddRestaurantPageState extends State<AddRestaurantPage> {
             const SizedBox(
               height: 16.0,
             ),
-            BlocConsumer<AddProductBloc, AddProductState>(
+            BlocConsumer<AddRestaurantBloc, AddRestaurantState>(
               listener: (context, state) {
                 state.maybeWhen(
                   orElse: () {},
@@ -154,8 +154,8 @@ class _AddRestaurantPageState extends State<AddRestaurantPage> {
                     );
 
                     context
-                        .read<GetAllProductBloc>()
-                        .add(const GetAllProductEvent.getByUserId());
+                        .read<GetAllRestaurantBloc>()
+                        .add(const GetAllRestaurantEvent.getByUserId());
                     context.pop();
                   },
                 );
@@ -179,8 +179,8 @@ class _AddRestaurantPageState extends State<AddRestaurantPage> {
                         );
                         if (!mounted) return;
                         context
-                            .read<AddProductBloc>()
-                            .add(AddProductEvent.add(addProduct));
+                            .read<AddRestaurantBloc>()
+                            .add(AddRestaurantEvent.add(addProduct));
                       },
                       buttonText: 'Add Restaurant',
                       buttonWidth: double.infinity,

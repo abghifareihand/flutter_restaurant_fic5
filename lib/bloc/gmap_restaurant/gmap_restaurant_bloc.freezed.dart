@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'get_all_product_bloc.dart';
+part of 'gmap_restaurant_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,64 +15,64 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$GetAllProductEvent {
+mixin _$GmapRestaurantEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() get,
-    required TResult Function() getByUserId,
+    required TResult Function() getCurrentLocation,
+    required TResult Function(double lat, double long) getSelectPosition,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? get,
-    TResult? Function()? getByUserId,
+    TResult? Function()? getCurrentLocation,
+    TResult? Function(double lat, double long)? getSelectPosition,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? get,
-    TResult Function()? getByUserId,
+    TResult Function()? getCurrentLocation,
+    TResult Function(double lat, double long)? getSelectPosition,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_Get value) get,
-    required TResult Function(_GetByUserId value) getByUserId,
+    required TResult Function(_GetCurrentLocation value) getCurrentLocation,
+    required TResult Function(_GetSelectPosition value) getSelectPosition,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_Get value)? get,
-    TResult? Function(_GetByUserId value)? getByUserId,
+    TResult? Function(_GetCurrentLocation value)? getCurrentLocation,
+    TResult? Function(_GetSelectPosition value)? getSelectPosition,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_Get value)? get,
-    TResult Function(_GetByUserId value)? getByUserId,
+    TResult Function(_GetCurrentLocation value)? getCurrentLocation,
+    TResult Function(_GetSelectPosition value)? getSelectPosition,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetAllProductEventCopyWith<$Res> {
-  factory $GetAllProductEventCopyWith(
-          GetAllProductEvent value, $Res Function(GetAllProductEvent) then) =
-      _$GetAllProductEventCopyWithImpl<$Res, GetAllProductEvent>;
+abstract class $GmapRestaurantEventCopyWith<$Res> {
+  factory $GmapRestaurantEventCopyWith(
+          GmapRestaurantEvent value, $Res Function(GmapRestaurantEvent) then) =
+      _$GmapRestaurantEventCopyWithImpl<$Res, GmapRestaurantEvent>;
 }
 
 /// @nodoc
-class _$GetAllProductEventCopyWithImpl<$Res, $Val extends GetAllProductEvent>
-    implements $GetAllProductEventCopyWith<$Res> {
-  _$GetAllProductEventCopyWithImpl(this._value, this._then);
+class _$GmapRestaurantEventCopyWithImpl<$Res, $Val extends GmapRestaurantEvent>
+    implements $GmapRestaurantEventCopyWith<$Res> {
+  _$GmapRestaurantEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -89,7 +89,7 @@ abstract class _$$_StartedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_StartedCopyWithImpl<$Res>
-    extends _$GetAllProductEventCopyWithImpl<$Res, _$_Started>
+    extends _$GmapRestaurantEventCopyWithImpl<$Res, _$_Started>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
       : super(_value, _then);
@@ -102,7 +102,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'GetAllProductEvent.started()';
+    return 'GmapRestaurantEvent.started()';
   }
 
   @override
@@ -118,8 +118,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() get,
-    required TResult Function() getByUserId,
+    required TResult Function() getCurrentLocation,
+    required TResult Function(double lat, double long) getSelectPosition,
   }) {
     return started();
   }
@@ -128,8 +128,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? get,
-    TResult? Function()? getByUserId,
+    TResult? Function()? getCurrentLocation,
+    TResult? Function(double lat, double long)? getSelectPosition,
   }) {
     return started?.call();
   }
@@ -138,8 +138,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? get,
-    TResult Function()? getByUserId,
+    TResult Function()? getCurrentLocation,
+    TResult Function(double lat, double long)? getSelectPosition,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -152,8 +152,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_Get value) get,
-    required TResult Function(_GetByUserId value) getByUserId,
+    required TResult Function(_GetCurrentLocation value) getCurrentLocation,
+    required TResult Function(_GetSelectPosition value) getSelectPosition,
   }) {
     return started(this);
   }
@@ -162,8 +162,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_Get value)? get,
-    TResult? Function(_GetByUserId value)? getByUserId,
+    TResult? Function(_GetCurrentLocation value)? getCurrentLocation,
+    TResult? Function(_GetSelectPosition value)? getSelectPosition,
   }) {
     return started?.call(this);
   }
@@ -172,8 +172,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_Get value)? get,
-    TResult Function(_GetByUserId value)? getByUserId,
+    TResult Function(_GetCurrentLocation value)? getCurrentLocation,
+    TResult Function(_GetSelectPosition value)? getSelectPosition,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -183,38 +183,40 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements GetAllProductEvent {
+abstract class _Started implements GmapRestaurantEvent {
   const factory _Started() = _$_Started;
 }
 
 /// @nodoc
-abstract class _$$_GetCopyWith<$Res> {
-  factory _$$_GetCopyWith(_$_Get value, $Res Function(_$_Get) then) =
-      __$$_GetCopyWithImpl<$Res>;
+abstract class _$$_GetCurrentLocationCopyWith<$Res> {
+  factory _$$_GetCurrentLocationCopyWith(_$_GetCurrentLocation value,
+          $Res Function(_$_GetCurrentLocation) then) =
+      __$$_GetCurrentLocationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetCopyWithImpl<$Res>
-    extends _$GetAllProductEventCopyWithImpl<$Res, _$_Get>
-    implements _$$_GetCopyWith<$Res> {
-  __$$_GetCopyWithImpl(_$_Get _value, $Res Function(_$_Get) _then)
+class __$$_GetCurrentLocationCopyWithImpl<$Res>
+    extends _$GmapRestaurantEventCopyWithImpl<$Res, _$_GetCurrentLocation>
+    implements _$$_GetCurrentLocationCopyWith<$Res> {
+  __$$_GetCurrentLocationCopyWithImpl(
+      _$_GetCurrentLocation _value, $Res Function(_$_GetCurrentLocation) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Get implements _Get {
-  const _$_Get();
+class _$_GetCurrentLocation implements _GetCurrentLocation {
+  const _$_GetCurrentLocation();
 
   @override
   String toString() {
-    return 'GetAllProductEvent.get()';
+    return 'GmapRestaurantEvent.getCurrentLocation()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Get);
+        (other.runtimeType == runtimeType && other is _$_GetCurrentLocation);
   }
 
   @override
@@ -224,32 +226,32 @@ class _$_Get implements _Get {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() get,
-    required TResult Function() getByUserId,
+    required TResult Function() getCurrentLocation,
+    required TResult Function(double lat, double long) getSelectPosition,
   }) {
-    return get();
+    return getCurrentLocation();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? get,
-    TResult? Function()? getByUserId,
+    TResult? Function()? getCurrentLocation,
+    TResult? Function(double lat, double long)? getSelectPosition,
   }) {
-    return get?.call();
+    return getCurrentLocation?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? get,
-    TResult Function()? getByUserId,
+    TResult Function()? getCurrentLocation,
+    TResult Function(double lat, double long)? getSelectPosition,
     required TResult orElse(),
   }) {
-    if (get != null) {
-      return get();
+    if (getCurrentLocation != null) {
+      return getCurrentLocation();
     }
     return orElse();
   }
@@ -258,106 +260,141 @@ class _$_Get implements _Get {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_Get value) get,
-    required TResult Function(_GetByUserId value) getByUserId,
+    required TResult Function(_GetCurrentLocation value) getCurrentLocation,
+    required TResult Function(_GetSelectPosition value) getSelectPosition,
   }) {
-    return get(this);
+    return getCurrentLocation(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_Get value)? get,
-    TResult? Function(_GetByUserId value)? getByUserId,
+    TResult? Function(_GetCurrentLocation value)? getCurrentLocation,
+    TResult? Function(_GetSelectPosition value)? getSelectPosition,
   }) {
-    return get?.call(this);
+    return getCurrentLocation?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_Get value)? get,
-    TResult Function(_GetByUserId value)? getByUserId,
+    TResult Function(_GetCurrentLocation value)? getCurrentLocation,
+    TResult Function(_GetSelectPosition value)? getSelectPosition,
     required TResult orElse(),
   }) {
-    if (get != null) {
-      return get(this);
+    if (getCurrentLocation != null) {
+      return getCurrentLocation(this);
     }
     return orElse();
   }
 }
 
-abstract class _Get implements GetAllProductEvent {
-  const factory _Get() = _$_Get;
+abstract class _GetCurrentLocation implements GmapRestaurantEvent {
+  const factory _GetCurrentLocation() = _$_GetCurrentLocation;
 }
 
 /// @nodoc
-abstract class _$$_GetByUserIdCopyWith<$Res> {
-  factory _$$_GetByUserIdCopyWith(
-          _$_GetByUserId value, $Res Function(_$_GetByUserId) then) =
-      __$$_GetByUserIdCopyWithImpl<$Res>;
+abstract class _$$_GetSelectPositionCopyWith<$Res> {
+  factory _$$_GetSelectPositionCopyWith(_$_GetSelectPosition value,
+          $Res Function(_$_GetSelectPosition) then) =
+      __$$_GetSelectPositionCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double lat, double long});
 }
 
 /// @nodoc
-class __$$_GetByUserIdCopyWithImpl<$Res>
-    extends _$GetAllProductEventCopyWithImpl<$Res, _$_GetByUserId>
-    implements _$$_GetByUserIdCopyWith<$Res> {
-  __$$_GetByUserIdCopyWithImpl(
-      _$_GetByUserId _value, $Res Function(_$_GetByUserId) _then)
+class __$$_GetSelectPositionCopyWithImpl<$Res>
+    extends _$GmapRestaurantEventCopyWithImpl<$Res, _$_GetSelectPosition>
+    implements _$$_GetSelectPositionCopyWith<$Res> {
+  __$$_GetSelectPositionCopyWithImpl(
+      _$_GetSelectPosition _value, $Res Function(_$_GetSelectPosition) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? lat = null,
+    Object? long = null,
+  }) {
+    return _then(_$_GetSelectPosition(
+      null == lat
+          ? _value.lat
+          : lat // ignore: cast_nullable_to_non_nullable
+              as double,
+      null == long
+          ? _value.long
+          : long // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_GetByUserId implements _GetByUserId {
-  const _$_GetByUserId();
+class _$_GetSelectPosition implements _GetSelectPosition {
+  const _$_GetSelectPosition(this.lat, this.long);
+
+  @override
+  final double lat;
+  @override
+  final double long;
 
   @override
   String toString() {
-    return 'GetAllProductEvent.getByUserId()';
+    return 'GmapRestaurantEvent.getSelectPosition(lat: $lat, long: $long)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetByUserId);
+        (other.runtimeType == runtimeType &&
+            other is _$_GetSelectPosition &&
+            (identical(other.lat, lat) || other.lat == lat) &&
+            (identical(other.long, long) || other.long == long));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, lat, long);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GetSelectPositionCopyWith<_$_GetSelectPosition> get copyWith =>
+      __$$_GetSelectPositionCopyWithImpl<_$_GetSelectPosition>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() get,
-    required TResult Function() getByUserId,
+    required TResult Function() getCurrentLocation,
+    required TResult Function(double lat, double long) getSelectPosition,
   }) {
-    return getByUserId();
+    return getSelectPosition(lat, long);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? get,
-    TResult? Function()? getByUserId,
+    TResult? Function()? getCurrentLocation,
+    TResult? Function(double lat, double long)? getSelectPosition,
   }) {
-    return getByUserId?.call();
+    return getSelectPosition?.call(lat, long);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? get,
-    TResult Function()? getByUserId,
+    TResult Function()? getCurrentLocation,
+    TResult Function(double lat, double long)? getSelectPosition,
     required TResult orElse(),
   }) {
-    if (getByUserId != null) {
-      return getByUserId();
+    if (getSelectPosition != null) {
+      return getSelectPosition(lat, long);
     }
     return orElse();
   }
@@ -366,65 +403,72 @@ class _$_GetByUserId implements _GetByUserId {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_Get value) get,
-    required TResult Function(_GetByUserId value) getByUserId,
+    required TResult Function(_GetCurrentLocation value) getCurrentLocation,
+    required TResult Function(_GetSelectPosition value) getSelectPosition,
   }) {
-    return getByUserId(this);
+    return getSelectPosition(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_Get value)? get,
-    TResult? Function(_GetByUserId value)? getByUserId,
+    TResult? Function(_GetCurrentLocation value)? getCurrentLocation,
+    TResult? Function(_GetSelectPosition value)? getSelectPosition,
   }) {
-    return getByUserId?.call(this);
+    return getSelectPosition?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_Get value)? get,
-    TResult Function(_GetByUserId value)? getByUserId,
+    TResult Function(_GetCurrentLocation value)? getCurrentLocation,
+    TResult Function(_GetSelectPosition value)? getSelectPosition,
     required TResult orElse(),
   }) {
-    if (getByUserId != null) {
-      return getByUserId(this);
+    if (getSelectPosition != null) {
+      return getSelectPosition(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetByUserId implements GetAllProductEvent {
-  const factory _GetByUserId() = _$_GetByUserId;
+abstract class _GetSelectPosition implements GmapRestaurantEvent {
+  const factory _GetSelectPosition(final double lat, final double long) =
+      _$_GetSelectPosition;
+
+  double get lat;
+  double get long;
+  @JsonKey(ignore: true)
+  _$$_GetSelectPositionCopyWith<_$_GetSelectPosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$GetAllProductState {
+mixin _$GmapRestaurantState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductsResponseModel data) loaded,
-    required TResult Function() error,
+    required TResult Function(GmapModel model) loaded,
+    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductsResponseModel data)? loaded,
-    TResult? Function()? error,
+    TResult? Function(GmapModel model)? loaded,
+    TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductsResponseModel data)? loaded,
-    TResult Function()? error,
+    TResult Function(GmapModel model)? loaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -456,16 +500,16 @@ mixin _$GetAllProductState {
 }
 
 /// @nodoc
-abstract class $GetAllProductStateCopyWith<$Res> {
-  factory $GetAllProductStateCopyWith(
-          GetAllProductState value, $Res Function(GetAllProductState) then) =
-      _$GetAllProductStateCopyWithImpl<$Res, GetAllProductState>;
+abstract class $GmapRestaurantStateCopyWith<$Res> {
+  factory $GmapRestaurantStateCopyWith(
+          GmapRestaurantState value, $Res Function(GmapRestaurantState) then) =
+      _$GmapRestaurantStateCopyWithImpl<$Res, GmapRestaurantState>;
 }
 
 /// @nodoc
-class _$GetAllProductStateCopyWithImpl<$Res, $Val extends GetAllProductState>
-    implements $GetAllProductStateCopyWith<$Res> {
-  _$GetAllProductStateCopyWithImpl(this._value, this._then);
+class _$GmapRestaurantStateCopyWithImpl<$Res, $Val extends GmapRestaurantState>
+    implements $GmapRestaurantStateCopyWith<$Res> {
+  _$GmapRestaurantStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -482,7 +526,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$GetAllProductStateCopyWithImpl<$Res, _$_Initial>
+    extends _$GmapRestaurantStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -495,7 +539,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'GetAllProductState.initial()';
+    return 'GmapRestaurantState.initial()';
   }
 
   @override
@@ -512,8 +556,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductsResponseModel data) loaded,
-    required TResult Function() error,
+    required TResult Function(GmapModel model) loaded,
+    required TResult Function(String message) error,
   }) {
     return initial();
   }
@@ -523,8 +567,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductsResponseModel data)? loaded,
-    TResult? Function()? error,
+    TResult? Function(GmapModel model)? loaded,
+    TResult? Function(String message)? error,
   }) {
     return initial?.call();
   }
@@ -534,8 +578,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductsResponseModel data)? loaded,
-    TResult Function()? error,
+    TResult Function(GmapModel model)? loaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -582,7 +626,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements GetAllProductState {
+abstract class _Initial implements GmapRestaurantState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -595,7 +639,7 @@ abstract class _$$_LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadingCopyWithImpl<$Res>
-    extends _$GetAllProductStateCopyWithImpl<$Res, _$_Loading>
+    extends _$GmapRestaurantStateCopyWithImpl<$Res, _$_Loading>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
@@ -608,7 +652,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'GetAllProductState.loading()';
+    return 'GmapRestaurantState.loading()';
   }
 
   @override
@@ -625,8 +669,8 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductsResponseModel data) loaded,
-    required TResult Function() error,
+    required TResult Function(GmapModel model) loaded,
+    required TResult Function(String message) error,
   }) {
     return loading();
   }
@@ -636,8 +680,8 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductsResponseModel data)? loaded,
-    TResult? Function()? error,
+    TResult? Function(GmapModel model)? loaded,
+    TResult? Function(String message)? error,
   }) {
     return loading?.call();
   }
@@ -647,8 +691,8 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductsResponseModel data)? loaded,
-    TResult Function()? error,
+    TResult Function(GmapModel model)? loaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -695,7 +739,7 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements GetAllProductState {
+abstract class _Loading implements GmapRestaurantState {
   const factory _Loading() = _$_Loading;
 }
 
@@ -704,14 +748,12 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({ProductsResponseModel data});
-
-  $ProductsResponseModelCopyWith<$Res> get data;
+  $Res call({GmapModel model});
 }
 
 /// @nodoc
 class __$$_LoadedCopyWithImpl<$Res>
-    extends _$GetAllProductStateCopyWithImpl<$Res, _$_Loaded>
+    extends _$GmapRestaurantStateCopyWithImpl<$Res, _$_Loaded>
     implements _$$_LoadedCopyWith<$Res> {
   __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
       : super(_value, _then);
@@ -719,36 +761,28 @@ class __$$_LoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = null,
+    Object? model = null,
   }) {
     return _then(_$_Loaded(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as ProductsResponseModel,
+      null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as GmapModel,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ProductsResponseModelCopyWith<$Res> get data {
-    return $ProductsResponseModelCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$_Loaded implements _Loaded {
-  const _$_Loaded(this.data);
+  const _$_Loaded(this.model);
 
   @override
-  final ProductsResponseModel data;
+  final GmapModel model;
 
   @override
   String toString() {
-    return 'GetAllProductState.loaded(data: $data)';
+    return 'GmapRestaurantState.loaded(model: $model)';
   }
 
   @override
@@ -756,11 +790,11 @@ class _$_Loaded implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loaded &&
-            (identical(other.data, data) || other.data == data));
+            (identical(other.model, model) || other.model == model));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode => Object.hash(runtimeType, model);
 
   @JsonKey(ignore: true)
   @override
@@ -773,10 +807,10 @@ class _$_Loaded implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductsResponseModel data) loaded,
-    required TResult Function() error,
+    required TResult Function(GmapModel model) loaded,
+    required TResult Function(String message) error,
   }) {
-    return loaded(data);
+    return loaded(model);
   }
 
   @override
@@ -784,10 +818,10 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductsResponseModel data)? loaded,
-    TResult? Function()? error,
+    TResult? Function(GmapModel model)? loaded,
+    TResult? Function(String message)? error,
   }) {
-    return loaded?.call(data);
+    return loaded?.call(model);
   }
 
   @override
@@ -795,12 +829,12 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductsResponseModel data)? loaded,
-    TResult Function()? error,
+    TResult Function(GmapModel model)? loaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(data);
+      return loaded(model);
     }
     return orElse();
   }
@@ -843,10 +877,10 @@ class _$_Loaded implements _Loaded {
   }
 }
 
-abstract class _Loaded implements GetAllProductState {
-  const factory _Loaded(final ProductsResponseModel data) = _$_Loaded;
+abstract class _Loaded implements GmapRestaurantState {
+  const factory _Loaded(final GmapModel model) = _$_Loaded;
 
-  ProductsResponseModel get data;
+  GmapModel get model;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -856,44 +890,70 @@ abstract class _Loaded implements GetAllProductState {
 abstract class _$$_ErrorCopyWith<$Res> {
   factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
       __$$_ErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
 }
 
 /// @nodoc
 class __$$_ErrorCopyWithImpl<$Res>
-    extends _$GetAllProductStateCopyWithImpl<$Res, _$_Error>
+    extends _$GmapRestaurantStateCopyWithImpl<$Res, _$_Error>
     implements _$$_ErrorCopyWith<$Res> {
   __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$_Error(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Error implements _Error {
-  const _$_Error();
+  const _$_Error(this.message);
+
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'GetAllProductState.error()';
+    return 'GmapRestaurantState.error(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Error);
+        (other.runtimeType == runtimeType &&
+            other is _$_Error &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductsResponseModel data) loaded,
-    required TResult Function() error,
+    required TResult Function(GmapModel model) loaded,
+    required TResult Function(String message) error,
   }) {
-    return error();
+    return error(message);
   }
 
   @override
@@ -901,10 +961,10 @@ class _$_Error implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductsResponseModel data)? loaded,
-    TResult? Function()? error,
+    TResult? Function(GmapModel model)? loaded,
+    TResult? Function(String message)? error,
   }) {
-    return error?.call();
+    return error?.call(message);
   }
 
   @override
@@ -912,12 +972,12 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductsResponseModel data)? loaded,
-    TResult Function()? error,
+    TResult Function(GmapModel model)? loaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error();
+      return error(message);
     }
     return orElse();
   }
@@ -960,6 +1020,11 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements GetAllProductState {
-  const factory _Error() = _$_Error;
+abstract class _Error implements GmapRestaurantState {
+  const factory _Error(final String message) = _$_Error;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      throw _privateConstructorUsedError;
 }

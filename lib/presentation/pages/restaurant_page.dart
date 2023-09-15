@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_restaurant_fic5/bloc/get_all_product/get_all_product_bloc.dart';
+import 'package:flutter_restaurant_fic5/bloc/get_all_restaurant/get_all_restaurant_bloc.dart';
 import 'package:flutter_restaurant_fic5/data/local_datasources/local_datasource.dart';
 import 'package:flutter_restaurant_fic5/presentation/widgets/restaurant_card.dart';
 import 'package:go_router/go_router.dart';
@@ -17,8 +17,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
   @override
   void initState() {
     context
-        .read<GetAllProductBloc>()
-        .add(const GetAllProductEvent.getByUserId());
+        .read<GetAllRestaurantBloc>()
+        .add(const GetAllRestaurantEvent.getByUserId());
     super.initState();
   }
 
@@ -44,7 +44,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
             horizontal: 16,
             vertical: 12,
           ),
-          child: BlocBuilder<GetAllProductBloc, GetAllProductState>(
+          child: BlocBuilder<GetAllRestaurantBloc, GetAllRestaurantState>(
             builder: (context, state) {
               return state.when(
                 initial: () => const Center(child: CircularProgressIndicator()),

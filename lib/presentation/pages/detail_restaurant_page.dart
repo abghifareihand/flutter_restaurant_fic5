@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_restaurant_fic5/bloc/detail_restaurant/detail_restaurant_bloc.dart';
-import 'package:flutter_restaurant_fic5/bloc/gmap/gmap_bloc.dart';
+import 'package:flutter_restaurant_fic5/bloc/gmap_restaurant/gmap_restaurant_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class DetailRestaurantPage extends StatefulWidget {
@@ -22,7 +22,7 @@ class _DetailRestaurantPageState extends State<DetailRestaurantPage> {
     context
         .read<DetailRestaurantBloc>()
         .add(DetailRestaurantEvent.get(widget.id));
-    context.read<GmapBloc>().add(const GmapEvent.getCurrentLocation());
+    context.read<GmapRestaurantBloc>().add(const GmapRestaurantEvent.getCurrentLocation());
     super.initState();
   }
 
@@ -62,7 +62,12 @@ class _DetailRestaurantPageState extends State<DetailRestaurantPage> {
               createMarker(lat, lng, model.data.attributes.address);
               return ListView(
                 children: [
-                  Image.network(model.data.attributes.photo),
+                  Image.network(
+                    model.data.attributes.photo,
+                    height: 300,
+                    width: double.infinity,
+                    fit: BoxFit.fill,
+                  ),
                   const SizedBox(
                     height: 16.0,
                   ),

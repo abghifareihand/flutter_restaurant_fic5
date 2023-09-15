@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_restaurant_fic5/bloc/add_product/add_product_bloc.dart';
+import 'package:flutter_restaurant_fic5/bloc/add_restaurant/add_restaurant_bloc.dart';
 import 'package:flutter_restaurant_fic5/bloc/detail_restaurant/detail_restaurant_bloc.dart';
-import 'package:flutter_restaurant_fic5/bloc/get_all_product/get_all_product_bloc.dart';
-import 'package:flutter_restaurant_fic5/bloc/gmap/gmap_bloc.dart';
+import 'package:flutter_restaurant_fic5/bloc/get_all_restaurant/get_all_restaurant_bloc.dart';
+import 'package:flutter_restaurant_fic5/bloc/gmap_restaurant/gmap_restaurant_bloc.dart';
 import 'package:flutter_restaurant_fic5/bloc/login/login_bloc.dart';
 import 'package:flutter_restaurant_fic5/bloc/register/register_bloc.dart';
 import 'package:flutter_restaurant_fic5/data/remote_datasources/auth_datasource.dart';
@@ -22,14 +22,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        // BlocProvider(
+        //   create: (context) => GetAllProductBloc(RestaurantDataSource()),
+        // ),
         BlocProvider(
-          create: (context) => GetAllProductBloc(RestaurantDataSource()),
+          create: (context) => GetAllRestaurantBloc(RestaurantDataSource()),
         ),
         BlocProvider(
           create: (context) => DetailRestaurantBloc(RestaurantDataSource()),
         ),
         BlocProvider(
-          create: (context) => GmapBloc(GmapDataSource()),
+          create: (context) => GmapRestaurantBloc(GmapDataSource()),
         ),
         BlocProvider(
           create: (context) => RegisterBloc(AuthDataSource()),
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
           create: (context) => LoginBloc(AuthDataSource()),
         ),
         BlocProvider(
-          create: (context) => AddProductBloc(RestaurantDataSource()),
+          create: (context) => AddRestaurantBloc(RestaurantDataSource()),
         ),
       ],
       child: MaterialApp.router(
